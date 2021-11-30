@@ -1,23 +1,29 @@
-<?php
-    include './php/data.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stl.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Hanouti</title>
+    <script>
+        
+    </script>
 </head>
 <body>
     <header>
         <h1>Hanouti</h1>
         <h6>Created By EL ARRAM MOULOUD</h6>
     </header>
+    <div class="data">
+        <?php
+            include './data.php';
+        ?>
+    </div>
     <div>
         <section class="scroller prods">
             <?php
+                
                 $indice = 0;
                 foreach ($products as $item){
                     print "
@@ -46,6 +52,6 @@
             <h5>CheckOut</h5>
         </div>
     </div>
-    <script src="js/src.js"></script> 
+    <script src="js/index.js"></script> 
 </body>
 </html>
