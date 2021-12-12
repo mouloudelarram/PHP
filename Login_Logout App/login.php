@@ -23,6 +23,10 @@
             <input type="password" name ="password" placeholder="your password goes here" required/>
             </div>
             <div>
+            <label for="remember me">remember me : </label>
+            <input type="checkbox" name ="remember_me"/>
+            </div>
+            <div>
                 <a href="./sign up.php">sign up</a>
                 <button type="submit" name="submit">Submit</button>
             </div>
@@ -43,6 +47,10 @@
                             "password"=>$_GET['password']
                         );
                         //echo "exist";
+                        if (isset($_GET['remember_me']))
+                            //echo "set";
+                            setcookie("name",$_GET['name'],time() + 60);
+                            
                         header('location:./index.php');
                     }
                 }

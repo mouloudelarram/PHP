@@ -1,10 +1,12 @@
 <?php
+    //print_r($_COOKIE['name']);
     session_start();
     $_SESSION['userData'];
     //print_r($_SESSION['userData']);
     //unset($_SESSION['userData']);
-    if (empty($_SESSION['userData']))
-        header('location:./sign up.php');
+    if (empty($_COOKIE['name']))    
+        if (empty($_SESSION['userData']))
+            header('location:./sign up.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +20,10 @@
 <body>
     <header>
         <?php echo $_SESSION['userData']['name'] ?>
-        
         <button name="logout"><a href="./index.php?action=logout&&logout=true">LogOut</a></button>
         <?php if (isset($_GET['logout'])){
              unset($_SESSION['userData']);
+             setcookie("name",$_GET['name'],time() - 60);
              header('location:./login.php');    
         }
         ?>

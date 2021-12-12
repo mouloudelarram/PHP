@@ -1,4 +1,2 @@
-user1 user1 user1@gmail.com
-user2 user2 user2@gmail.com
-mouloud 1234 maoiloud2002@gmail.com
-user3 123 user3
+user1 user1 user1@gmail.com .
+user2 user2 user2@gmail.com .

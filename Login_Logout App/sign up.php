@@ -11,36 +11,15 @@
         <form method="GET" class="signup">
             <h3>Sign Up with new account</h3>
             
-            <?php
-            if (isset($_GET['name']))
-            echo "
+            
             <div>
-            <label for=\"name\">name : </label>
-            <input type=\"text\" name =\"name\" placeholder=\"your name goes here\" value=\"".$_GET['name']."\" required/>
+            <label for="name">name : </label>
+            <input type="text" name ="name" placeholder="your name goes here" value="<?php if (isset($_GET['name'])) echo $_GET['name'];?>" required/>
             </div>
-            ";
-            else
-            echo "
             <div>
-            <label for=\"name\">name : </label>
-            <input type=\"text\" name =\"name\" placeholder=\"your name goes here\" required/>
+            <label for="email">email : </label>
+            <input type="text" name ="email" placeholder="your email goes here" value="<?php if (isset($_GET['email'])) echo $_GET['email']?>" required/>
             </div>
-            ";
-            if (isset($_GET['email']))
-            echo "
-            <div>
-            <label for=\"email\">email : </label>
-            <input type=\"text\" name =\"email\" placeholder=\"your email goes here\" value=\"".$_GET['email']."\" required/>
-            </div>
-            ";
-            else
-            echo "
-            <div>
-            <label for=\"email\">email : </label>
-            <input type=\"text\" name =\"email\" placeholder=\"your email goes here\" required/>
-            </div>
-            ";
-            ?>
             <div>
             <label for="password">password : </label>
             <input type="password" name ="password" placeholder="your password goes here" required/>
@@ -55,25 +34,33 @@
             </div>  
         </form>
         <?php
+            if (isset($_GET['erreur'])){
+                echo $_GET['erreur'];
+            }
             if (isset($_GET['password']) && isset($_GET['conf_password'])){
+                include './data/data.php';
                 if ($_GET['password'] ==  $_GET['conf_password']){
-                    include './data/data.php';
-                    putData($_GET['name'], $_GET['email'], $_GET['password']);
-                    session_start();
-                    $_SESSION['userData'] = array(
-                        "name"=> $_GET['name'],
-                        "email"=> $_GET['email'],
-                        "password"=>$_GET['password']
-                    );
-                    print_r($_SESSION['userData']);
-                    header('location:./index.php');
+                    if (!search($_GET['name'], $_GET['email'])){
+                        putData($_GET['name'], $_GET['email'], $_GET['password']);
+                        session_start();
+                        $_SESSION['userData'] = array(
+                            "name"=> $_GET['name'],
+                            "email"=> $_GET['email'],
+                            "password"=>$_GET['password']
+                        );
+                        print_r($_SESSION['userData']);
+                        header('location:./index.php');
+                    }
+                    else{
+                        header('location:./sign up.php?name='.$_GET['name'].'&email='.$_GET['email'].'&erreur=email or name already exist');
+                    }                    
                 }
                 else{
-                    header('location:./sign up.php?name='.$_GET['name'].'&email='.$_GET['email']);
+                    header('location:./sign up.php?name='.$_GET['name'].'&email='.$_GET['email'].'&erreur=password erreur');
+                    
                 }
             }
-            if (isset($_GET['name']))
-                echo 'password erreur';
+                
         ?>
 
 </body>
