@@ -1,0 +1,270 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: lightgray;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-image:linear-gradient(45deg, orange, aqua);
+    
+}
+body{-webkit-user-select:none;-moz-user-select:-moz-none;
+    -ms-user-select:none;user-select:none}
+/* header style */
+header{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logout:hover{
+    transform: scale(1.05);
+    color: crimson;
+}
+
+.logo{
+    flex: 0;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    justify-content: left;
+    cursor: pointer;
+}
+
+.logo > img {
+    width: 60px;
+    height: 60px;
+    max-height: 100%;
+}
+
+.userData {
+    flex: 1;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    display: flex;
+    justify-content: right;
+}
+
+.userData > h5{
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+/* main style */
+main{
+    width: 100%;
+    height: 80%;
+    
+    display: flex;
+}
+
+section{
+    width: 85%;
+    height: 100%;
+    
+}
+
+
+/* aside style */
+aside{
+    place-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+
+/* height */
+::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(200, 200, 200);
+    border-radius: 50px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(150, 150, 150);
+    border-radius: 50px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(100, 100, 100);
+  }
+
+.item, .Currentitem{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 5px;
+    background-color: lightgray;
+    border: 1px solid gray;
+    opacity: 50%;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.item:hover, .Currentitem:hover{
+    transform: scale(1.05);
+}
+
+.Currentitem{
+    opacity: 75%;
+    border: 1px solid white;
+}
+
+
+
+.item > h5 .Currentitem > h5{
+    padding: 1%;
+}
+
+/* footer style */
+footer{
+    width: 100%;
+    height: 10%;
+    /* background-color: gray; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.options{
+    display: grid;
+    place-items: center;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* background-color: rebeccapurple; */
+}
+.options > h5{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+}
+
+.speed{
+    display: grid;
+    place-items: center;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+   /*  background-color: red; */
+}
+#speed{
+   width: 60%;
+   margin: 5%;
+   cursor: pointer;
+}
+.speedValue{
+    word-break: keep-all;
+    word-wrap: normal;
+    flex-wrap: nowrap;
+}
+select{
+    margin-left: 5%;
+    opacity: 50%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+option{
+    background: lightblue;
+    border: none;
+    cursor: pointer;
+}
+.point{
+    display: grid;
+    place-items: center;
+    width: 20%;
+    height: 100%;
+    /* background-color: blue; */
+}
+
+.start{
+    border-radius: 50px;
+    background-color: lightgreen;
+    margin: 10px;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+.stop{
+    border-radius: 50px;
+    background-color: lightcoral;
+    margin: 10px;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+.save{
+    border-radius: 50px;
+    background-color: lightblue;
+    margin: 10px;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+.save:hover, .start:hover,.stop:hover{
+    transform: scale(1.1);
+}
+
+@media (max-width: 1300px) {
+    aside{
+        display: none;
+    }
+    section{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 850px) {
+    #speed{
+        display: none;
+    }
+    .speedValue {
+        display: none;
+    }
+    .options{
+        width: 30%;
+    }
+    .speed{
+        width: 30%;
+    }
+    .point{
+        width: 30%;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .options{
+        width: 50%;
+    }
+    .speed{
+        display: none;
+    }
+    .point{
+        width: 50%;
+    }
+}

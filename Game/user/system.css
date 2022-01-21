@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+}
+
+main{
+    display: grid;
+    align-items: center;
+    place-items: center;
+}
+
+/* header style */
+header{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    margin-bottom: 5%;
+    box-shadow: 4px 1px 20px -6px rgba(0,0,0,0.5);
+}
+
+.logo{
+    flex: 0;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    justify-content: left;
+}
+
+.logo > img {
+    width: 60px;
+    height: 60px;
+    max-height: 100%;
+}
+
+
+form{
+    width: auto;
+    width: 90%;
+    max-width: 600px;
+    min-width: 20%;
+    border: 1px solid lightgray;
+    box-shadow: 4px 1px 20px -6px rgba(0,0,0,0.1);
+    margin: auto;
+    font-family: sans-serif;
+    color: #657482;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+form > .option{
+    text-transform: uppercase;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+a{
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color:  #657482;
+    padding: 20px;
+}
+
+.login{
+    background-color: rgb(240, 240, 240);
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+.signup{
+    background-color: rgb(240, 240, 240);
+    border-bottom: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+}
+
+form> .main > h1{
+    font-weight: 1;
+    color:#11161a;;
+    width: 90%;
+    padding: 5%;
+    font-size: 30px;
+    
+}
+
+.detail{
+    margin: auto;
+    font-weight: 5;
+    width: 45%;
+    text-align: center;
+    word-wrap: break-word;
+    padding: 5%;
+}
+
+button, form> .main> h6, input{
+    width: 90%;
+    margin: 2%;
+    padding: 2%;
+}
+
+input{
+    border: 1px solid lightblue;
+    outline: red;
+    border-radius: 5px;
+}
+
+.main > h6{
+    font-weight: 1;
+    font-size: 15px;
+}
+
+button{
+    background-color: #02b3e4;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    text-decoration: none;
+    border: 1px solid lightblue;
+    width: 95%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #fff ;
+    color: #02b3e4;
+}
+
+input:focus {
+    box-shadow: 0 0 0 4px #02b3e4;
+}
+
+.error{
+    color: crimson;
+    width: 100%;
+    font-weight: 1;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+}
+
+.ForgotPassword{
+    color: #02b3e4;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ForgotPassword:hover{
+    transform: scale(1.1);
+}
+
+
+.Anonymous{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Anonymous:hover h5 {
+    color: #02b3e4;
+}
+.Anonymous >a{
+    padding: 0;
+    min-width: 30%;
+    width: 30%;
+    text-align: right;
+}
+.Anonymous > h5{
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    flex: 1;
+    color: #fff;
+}
